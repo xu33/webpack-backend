@@ -55,7 +55,7 @@ module.exports = {
         return context && context.indexOf('node_modules') >= 0;
       }
     }),
-    // 提取webpack运行环境代码到单独的文件，命名为runtime
+    // 提取webpack运行环境代码到单独的文件，命名为runtime(只要是没在entry中出现的name即可)
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime',
       minChunks: Infinity
