@@ -55,6 +55,12 @@ module.exports = {
       name: 'runtime',
       minChunks: Infinity
     }),
+    /*
+		new webpack.optimize.CommonsChunkPlugin({
+      name: 'react', // 指定vendor的名字（不带扩展名），如果指定的名字是某个entry的名字，则直接用这个entry的压缩结果作为CommonChunk的文件内容
+      filename: 'vendor.js' // 如果没设置，默认是使用name + '.js'，如果设置了，则使用filename作为CommonChunk的文件名
+    }),
+    */
     new webpack.DefinePlugin({
       IN_APP: JSON.stringify(false),
       'process.env.NODE_ENV': '"development"'
